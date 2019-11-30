@@ -15,7 +15,7 @@ object Service extends Service {
 
   def testProvider(livyClient: LivyScalaClient, someSeq: Seq[String], someArray: Array[String]): Future[Unit] = {
 
-    val path: String = "/transient/source/d557feda-410f-4950-9744-a40ae65693a0/elements/TestCSV.csv"
+    val path: String = "/transient/TestCSV.csv"
 
     for {
       _ <- livyClient.submit(SuccessfulJob(someArray, path).call)
